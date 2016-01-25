@@ -1,0 +1,43 @@
+{
+  "variables": {
+    "distro": "{{env `DISTRO`}}",
+    "src_ami": "{{env `SRC_AMI`}}",
+    "src_region": "{{env `SRC_REGION`}}",
+    "app_version": "{{env `APP_VERSION`}}"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "ami_name": "vancluever_hello - Version {{user `app_version`}} - Ubuntu {{user `distro`}} - {{timestamp}}",
+      "instance_type": "t2.medium",
+      "region": "{{user `src_region`}}",
+      "source_ami": "{{user `src_ami`}}",
+      "ssh_username": "ubuntu",
+      "tags": {
+        "app_name": "vancluever_hello"
+      }
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": ["mkdir /tmp/gem_pkg"]
+    },
+    {
+      "type": "file",
+      "source": "pkg/vancluever_hello-{{user `app_version`}}.gem",
+      "destination": "/tmp/gem_pkg/vancluever_hello-{{user `app_version`}}.gem"
+    },
+    {
+      "type": "chef-solo",
+      "cookbook_paths": ["berks-cookbooks"],
+      "run_list": ["packer_payload"],
+      "json": {
+        "packer_payload": {
+          "app_vrsion": "{{user `app_version`}}"
+        }
+      }
+    }
+  ]
+}

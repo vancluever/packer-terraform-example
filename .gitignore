@@ -1,0 +1,23 @@
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# Adding bin and vendor as this should never be vendored in production
+/bin/
+/vendor/
+
+# Chef stuff
+.kitchen/
+berks-cookbooks/
+Berksfile.lock
+
+# Terraform
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
