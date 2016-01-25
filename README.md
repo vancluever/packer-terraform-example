@@ -10,7 +10,7 @@ http://vancluevertech.com (soon to follow).
 
  * A small ruby gem (`vancluever_hello`). This is built using rubygems tasks
    using `rake`.
- * A Chef recipe designed for deploying the applicatin (`packer_payload`).
+ * A Chef recipe designed for deploying the application (`packer_payload`).
    This is a single-purpose cookbook that is not intended to be shared in
    Supermarket, etc. It's only intended for use with Packer. With that said,
    having a cookbook allows you to port this functionality to a general-use
