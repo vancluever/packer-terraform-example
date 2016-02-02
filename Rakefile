@@ -106,3 +106,14 @@ task :infrastructure do
    TF_VAR_region=#{region} \
    terraform #{tf_cmd} terraform"
 end
+
+desc 'Run test-kitchen on packer_payload cookbook'
+task :kitchen do
+  sh "cd cookbooks/packer_payload && \
+   KITCHEN_YAML=.kitchen.cloud.yml \
+   AWS_KITCHEN_AMI_ID=#{ubuntu_ami_id} \
+   AWS_KITCHEN_USER=ubuntu \
+   AWS_REGION=#{region} \
+   KITCHEN_APP_VERSION=#{VanclueverHello::VERSION} \
+   kitchen test"
+end
