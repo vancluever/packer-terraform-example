@@ -3,8 +3,8 @@
 This repository houses a simple application that demonstrates an end-to-end
 infrastructure as code pattern using Packer and Terraform.
 
-This repository will serve as the basis for an accompanying article at
-http://vancluevertech.com (soon to follow).
+This repository serves as the technical example for the following article:
+https://vancluevertech.com/2016/02/02/aws-world-detour-packer-and-terraform/
 
 ## The Components
 
