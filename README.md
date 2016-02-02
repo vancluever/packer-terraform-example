@@ -47,14 +47,15 @@ To prepare the repository for use, clone it and run
 bundle install --binstubs --path vendor/bundle
 ```
 
-You should then be good to start using `bundle exec rake`.
+You should then be good to start using `bundle exec rake`. Get a list of
+commands by running `bundle exec rake -T`.
 
 You also need [Packer](https://www.packer.io/) and
 [Terraform](https://www.terraform.io/).
 
 Finally, valid AWS credentials will need to be available in your credential
-chain, either as environment variables (ie: AWS_ACCESS_KEY,
-AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN), or your credentials in your
+chain, either as environment variables (ie: `AWS_ACCESS_KEY`,
+`AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN`), or your credentials in your
 `~/.aws` directory.
 
 ### Environment variables
