@@ -35,7 +35,7 @@
       "run_list": ["packer_payload"],
       "json": {
         "packer_payload": {
-          "app_vrsion": "{{user `app_version`}}"
+          "app_version": "{{user `app_version`}}"
         }
       }
     }
